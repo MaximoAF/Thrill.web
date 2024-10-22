@@ -1,0 +1,159 @@
+:root {
+  --fontHeadding: "PT Sans", sans-serif;
+  --fontParagraph: "Open Sans", sans-serif;
+
+  --primaryColor: #f3ecdf;
+  --whiteColor: #ffffff;
+  --secondariColor: #252525;
+  --blackColor: #000000;
+}
+/* apply a natural box layout model to all 
+elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px*/
+  scroll-behavior: smooth;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: var(--fontParagraph);
+  font-size: 1.6rem;
+  line-height: 2;
+  margin: 0;
+
+  background-color: var(--primaryColor);
+  color: var(--blackColor);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Globals */
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fontHeadding);
+  line-height: 1.2;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 2.8rem;
+}
+h4 {
+  font-size: 2rem;
+}
+img {
+  max-width: 100%;
+}
+/* Utilities */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+/* Header Logo */
+header {
+  background-color: var(--secondariColor);
+  color: var(--primaryColor);
+  text-align: center;
+  padding: 10px 0;
+}
+
+.header__logo {
+  width: 150px;
+}
+
+.gallery {
+  width: min(100%, 90rem);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+  flex-grow: 1; /* Esto hace que la galería crezca y ocupe espacio disponible */
+}
+@media (min-width: 420px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.sub-tittle {
+  font-size: 2rem;
+  margin: 0rem;
+  padding: 0rem;
+  text-align: center;
+  margin: 10px;
+}
+.product {
+  background-color: var(--whiteColor);
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; /* Esto recorta la imagen si es necesario */
+  border-radius: 10px;
+}
+
+.product h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.product p {
+  font-size: 1.6rem;
+  color: var(--secondariColor);
+}
+
+.product:hover {
+  transform: scale(1.05);
+}
+
+.out-of-stock {
+  opacity: 0.5; /* Hace que el producto sea menos visible */
+  pointer-events: none; /* Desactiva la interactividad (si lo deseas) */
+}
+
+.out-of-stock span {
+  display: block; /* Muestra el texto 'Sin stock' en una nueva línea */
+  color: red; /* Color rojo para el texto de 'Sin stock' */
+  font-weight: bold; /* Negrita para destacar el mensaje */
+  text-align: center; /* Centra el texto */
+  margin-top: 10px; /* Espacio superior para separación */
+}
+
+/* Footer sticky */
+.footer {
+  font-size: small;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: var(--secondariColor);
+  color: var(--primaryColor);
+}
+.footer p {
+  margin: 0px;
+}
