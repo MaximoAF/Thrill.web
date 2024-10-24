@@ -105,8 +105,13 @@ header {
 
 /* Aside L */
 .main__aside_l {
-  background-color: var(--secondariColor);
+  background-color: var(--primaryColor);
   position: relative;
+}
+.nav__tittle{
+  margin: 5px;
+  font-size: 2.4rem;
+  color: var(--primaryColor);
 }
 .nav {
   background-color: var(--secondariColor);
@@ -134,21 +139,86 @@ header {
   background-color: var(--blackColor);
   transform: scale(1.05);
 }
-@media( min-width: 425px) {
+@media( min-width: 768px) {
   .nav {
+    background-color: var(--primaryColor);
     justify-content: center;
     align-items: center;
     padding: 5px;
   }
   .nav__link {
-    background-color: var(--secondariColor);
-    color: var(--primaryColor);
+    background-color: var(--primaryColor);
+    color: var(--secondariColor);
     text-align: center;
     width: 100%;
     font-size: small;
     padding: 2px 10px;
     border-radius: 5px;
     transition: all 0.3s ease;
+  }
+  .nav__link:hover {
+    color: var(--primaryColor);
+  }
+  .nav__tittle{
+    color: var(--secondariColor);
+  }
+}
+/* Aside R */
+.main__aside_r {
+  background-color: var(--primaryColor);
+  position: relative;
+}
+.social__tittle{
+  margin: 5px;
+  font-size: 2.4rem;
+  color: var(--primaryColor);
+}
+.social {
+  background-color: var(--secondariColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20%;
+  position: sticky;
+  top: 0; /* Fija el elemento en la parte superior */
+  width: 100%;
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos si es necesario */
+}
+.social__link {
+  background-color: var(--secondariColor);
+  color: var(--primaryColor);
+  text-align: center;
+  width: 100%;
+  font-size: small;
+  padding: 2px 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.social__link:hover {
+  background-color: var(--blackColor);
+  transform: scale(1.05);
+}
+@media( min-width: 768px) {
+  .social {
+    background-color: var(--primaryColor);
+    padding: 5px;
+  }
+  .social__link {
+    background-color: var(--primaryColor);
+    color: var(--secondariColor);
+    text-align: left;
+    width: 100%;
+    font-size: small;
+    padding: 2px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  .social__link:hover {
+    color: var(--primaryColor);
+  }
+  .social__tittle{
+    color: var(--secondariColor);
   }
 }
 
